@@ -26,3 +26,7 @@ variable "monitor_name" {
   type        = string
   description = "monitor_name for the key vault"
 }
+variable "storage_name" {
+  type        = string
+  description = "storage_name for the key vault"
+}
