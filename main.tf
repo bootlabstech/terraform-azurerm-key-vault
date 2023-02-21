@@ -23,3 +23,17 @@ resource "azurerm_key_vault" "key_vault" {
     ]
   }
 }
+
+resource "azurerm_monitor_diagnostic_setting" "monitor" {
+  name               = var.monitor_name
+  target_resource_id = azurerm_key_vault.key_vault.id
+  storage_account_id = azurerm_storage_account.storage.id
+
+  enabled_log {
+    category = "AuditEvent"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+}
