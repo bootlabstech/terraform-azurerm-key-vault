@@ -34,11 +34,8 @@ resource "azurerm_monitor_diagnostic_setting" "monitor" {
   target_resource_id = azurerm_key_vault.key_vault.id
   storage_account_id = data.azurerm_storage_account.storage.id
 
-  enabled_log {
+  log {
     category = "AuditEvent"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled  = true
   }
 }
