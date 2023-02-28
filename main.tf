@@ -24,21 +24,21 @@ resource "azurerm_key_vault" "key_vault" {
   }
 }
 
-resource "azurerm_storage_account" "storage" {
-  name                     = var.storage_name
-  resource_group_name      = var.resource_group
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-}
+# resource "azurerm_storage_account" "storage" {
+#   name                     = var.storage_name
+#   resource_group_name      = var.resource_group
+#   location                 = var.location
+#   account_tier             = "Standard"
+#   account_replication_type = "GRS"
+# }
 
-resource "azurerm_monitor_diagnostic_setting" "monitor" {
-  name               = var.monitor_name
-  target_resource_id = azurerm_key_vault.key_vault.id
-  storage_account_id = azurerm_storage_account.storage.id
+# resource "azurerm_monitor_diagnostic_setting" "monitor" {
+#   name               = var.monitor_name
+#   target_resource_id = azurerm_key_vault.key_vault.id
+#   storage_account_id = azurerm_storage_account.storage.id
 
-  log {
-    category = "AuditEvent"
-    enabled  = true
-  }
-}
+#   log {
+#     category = "AuditEvent"
+#     enabled  = true
+#   }
+# }
