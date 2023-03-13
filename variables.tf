@@ -13,10 +13,12 @@ variable "resource_group" {
 variable "soft_delete_retention_days" {
   type        = number
   description = "how much is the soft delete retention days for the key vault"
+  default = 7
 }
 variable "purge_protection_enabled" {
   type        = bool
   description = "whether purge_protection is enabledfor the key vault"
+  default = true
 }
 variable "sku_name" {
   type        = string
