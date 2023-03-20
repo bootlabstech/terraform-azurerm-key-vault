@@ -6,7 +6,7 @@ variable "location" {
   type        = string
   description = "location of the key vault"
 }
-variable "resource_group" {
+variable "resource_group_name" {
   type        = string
   description = "resource group of the key vault"
 }
