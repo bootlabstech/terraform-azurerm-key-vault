@@ -23,6 +23,11 @@ resource "azurerm_key_vault" "key_vault" {
       "Get",
     ]
   }
+  network_acls {
+    bypass = "AzureServices"
+    default_action = "Allow"
+
+  }
 }
 
 # resource "azurerm_storage_account" "storage" {
