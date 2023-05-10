@@ -17,7 +17,7 @@ resource "azurerm_key_vault" "key_vault" {
       "SetRotationPolicy",
     ]
     secret_permissions = [
-      "Get",
+      "Get", "Set"
     ]
     storage_permissions = [
       "Get",
