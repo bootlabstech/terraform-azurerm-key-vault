@@ -33,5 +33,10 @@ resource "azurerm_key_vault" "key_vault" {
     default_action = "Allow"
 
   }
+  lifecycle {
+    ignore_changes = [
+      tags,
+    ]
+  }
 }
 
