@@ -33,17 +33,17 @@ variable "enabled_for_template_deployment" {
 variable "enable_rbac_authorization" {
   type        = bool
   description = "Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions."
-  default = true
+  default = false
 }
 variable "purge_protection_enabled" {
   type        = bool
   description = "Is Purge Protection enabled for this Key Vault?"
-  default     = true
+  default     = false
 }
-
 variable "public_network_access_enabled" {
   type        = bool
   description = "Whether public network access is allowed for this Key Vault. Defaults to true."
+  default = true
 }
 variable "soft_delete_retention_days" {
   type        = number
