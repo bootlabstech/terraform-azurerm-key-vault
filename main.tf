@@ -39,5 +39,5 @@ resource "azurerm_key_vault" "key_vault" {
       access_policy,
     ]
   }
-  depends_on = [module.resource_group.resource_group]
+
 }
