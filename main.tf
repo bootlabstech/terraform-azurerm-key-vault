@@ -10,7 +10,7 @@ resource "azurerm_key_vault" "key_vault" {
   enabled_for_deployment          = var.enabled_for_deployment
   enabled_for_disk_encryption     = var.enabled_for_disk_encryption
   enabled_for_template_deployment = var.enabled_for_template_deployment
-  enable_rbac_authorization       = var.enable_rbac_authorization
+  rbac_authorization_enabled       = var.rbac_authorization_enabled
   purge_protection_enabled        = var.purge_protection_enabled
   public_network_access_enabled   = var.public_network_access_enabled
   soft_delete_retention_days      = var.soft_delete_retention_days
@@ -35,10 +35,7 @@ resource "azurerm_key_vault" "key_vault" {
   }
   lifecycle {
     ignore_changes = [
-      tags,
-      access_policy,
+      tags,access_policy
     ]
   }
-  depends_on = [module.resource_group.resource_group]
-
 }

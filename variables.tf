@@ -33,7 +33,7 @@ variable "enabled_for_template_deployment" {
   description = "Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault."
   default     = true
 }
-variable "enable_rbac_authorization" {
+variable "rbac_authorization_enabled" {
   type        = bool
   description = "Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions."
   default     = false
